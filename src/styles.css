@@ -2063,7 +2063,7 @@ button {
     background-image: url("/images/cta-earth.png") !important;
     background-repeat: no-repeat !important;
     background-size: auto 112% !important;
-    background-position: 76% center !important;
+    background-position: 76% calc(50% - 28px) !important;
     filter: blur(3px) !important;
     opacity: .48 !important;
     transform: scale(1.025) !important;
@@ -2451,4 +2451,51 @@ button {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
   }
+}
+
+
+/* =========================================================
+   AJUSTE DE ESPAÇAMENTO — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  /* Projetos: menos espaço acima e abaixo da seção */
+  .projects {
+    padding-top: 52px !important;
+    padding-bottom: 58px !important;
+  }
+
+  .projects .section-top {
+    margin-bottom: 30px !important;
+  }
+
+  /* Serviços: seção mais compacta verticalmente */
+  .services {
+    padding-top: 48px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .services-heading {
+    margin-bottom: 20px !important;
+  }
+
+  /* Processo: aproxima o título dos cards */
+  .about-process {
+    margin-top: 34px !important;
+    padding-top: 20px !important;
+  }
+
+  .about-process .process-intro {
+    margin-bottom: 0 !important;
+  }
+
+  .about-process .process-intro .eyebrow {
+    margin-bottom: 8px !important;
+  }
+
+  .about-process .process-steps {
+    margin-top: 14px !important;
+  }
+
 }
