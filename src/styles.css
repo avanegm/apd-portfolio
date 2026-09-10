@@ -3774,52 +3774,93 @@ button {
 }
 
 /* =========================================
-   HERO — CORREÇÃO MOBILE
+   HERO MOBILE — CORREÇÃO DEFINITIVA
+   A imagem fica somente como elemento visual
+   no lado direito, sem o texto embutido aparecer.
    ========================================= */
 
 @media (max-width: 700px) {
 
   .hero {
+    position: relative !important;
     min-height: 680px !important;
+
     padding: 120px 30px 55px !important;
 
-    background-size: auto 100% !important;
-    background-position: 72% center !important;
-    background-repeat: no-repeat !important;
-
+    display: flex !important;
     align-items: flex-start !important;
+    justify-content: flex-start !important;
+
+    overflow: hidden !important;
+
+    background-color: #050a11 !important;
+
+    /*
+      A imagem original é horizontal e já possui
+      textos dentro dela.
+      Jogamos a imagem totalmente para a direita,
+      mostrando praticamente só o notebook.
+    */
+    background-image: url("/images/hero-devices.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: auto 115% !important;
+    background-position: right center !important;
   }
 
+  /*
+    Escurece principalmente o lado esquerdo,
+    onde fica o texto real do site.
+  */
   .hero::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+
     background:
       linear-gradient(
+        90deg,
+        rgba(5, 10, 17, 1) 0%,
+        rgba(5, 10, 17, .94) 38%,
+        rgba(5, 10, 17, .60) 65%,
+        rgba(5, 10, 17, .18) 100%
+      ),
+      linear-gradient(
         180deg,
-        rgba(5, 10, 17, .20) 0%,
-        rgba(5, 10, 17, .45) 45%,
-        rgba(5, 10, 17, .82) 78%,
+        rgba(5, 10, 17, .10) 0%,
+        rgba(5, 10, 17, .25) 70%,
         rgba(5, 10, 17, 1) 100%
       ) !important;
+
     opacity: 1 !important;
+    pointer-events: none !important;
   }
 
+  /*
+    Conteúdo verdadeiro do site fica acima da imagem.
+  */
   .hero-content,
   .hero-copy {
     position: relative !important;
     z-index: 3 !important;
+
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: 360px !important;
   }
 
   .hero h1 {
     max-width: 360px !important;
-    font-size: clamp(3rem, 12vw, 4.2rem) !important;
+
+    font-size: clamp(3rem, 12vw, 4rem) !important;
     line-height: .91 !important;
     letter-spacing: -.055em !important;
   }
 
   .hero p {
     max-width: 330px !important;
+
     margin-top: 24px !important;
+
     font-size: 16px !important;
     line-height: 1.5 !important;
   }
