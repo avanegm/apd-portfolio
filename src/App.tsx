@@ -448,9 +448,6 @@ function App() {
 
         
         <div className="footer-center">
-          <span>
-            Sua marca merece estar bem representada.
-          </span>
 
         </div>
 
