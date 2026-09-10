@@ -2497,5 +2497,22 @@ button {
   .about-process .process-steps {
     margin-top: 14px !important;
   }
+}
 
+/* =========================================================
+   AJUSTE FINAL — HERO MOBILE
+   Remove o bloco escuro atrás da frase e deixa a imagem
+   aparecer de forma mais uniforme.
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .hero::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5,10,17,.04) 0%,
+        rgba(5,10,17,.02) 45%,
+        rgba(5,10,17,.52) 100%
+      ) !important;
+  }
 }
