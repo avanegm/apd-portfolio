@@ -3775,45 +3775,42 @@ button {
 
 /* =========================================================
    APD — HERO MOBILE
-   IMAGEM AO FUNDO + BLUR + TEXTO EM PRIMEIRO PLANO
+   IMAGEM AO FUNDO, DESFOCADA MAS RECONHECÍVEL
    ========================================================= */
 
 @media (max-width: 700px) {
 
-  /* ---------------------------------------------------------
-     HERO
-     --------------------------------------------------------- */
-
   .hero {
     position: relative !important;
-
-    /*
-      Altura baseada no conteúdo.
-      Nada de espaço gigante depois do botão.
-    */
     min-height: 0 !important;
     height: auto !important;
 
-    padding: 105px 30px 55px !important;
+    padding: 105px 30px 50px !important;
 
     display: block !important;
-
     overflow: hidden !important;
 
     background: #050a11 !important;
   }
 
 
-  /* ---------------------------------------------------------
-     IMAGEM DE FUNDO
-     --------------------------------------------------------- */
+  /* =====================================================
+     IMAGEM
+     ===================================================== */
 
   .hero::before {
     content: "" !important;
 
     position: absolute !important;
 
-    inset: -35px !important;
+    /*
+      Sai um pouco da área para o blur não criar
+      bordas estranhas.
+    */
+    top: -30px !important;
+    right: -80px !important;
+    bottom: -30px !important;
+    left: -80px !important;
 
     z-index: 0 !important;
 
@@ -3822,38 +3819,35 @@ button {
     background-repeat: no-repeat !important;
 
     /*
-      A imagem fica grande atrás do conteúdo.
-      O excesso é cortado pelas laterais.
+      Mantém a proporção original.
+      A imagem fica grande, mas não deformada.
     */
-    background-size: auto 100% !important;
+    background-size: cover !important;
 
     background-position: 68% center !important;
 
     /*
-      Blur real.
+      Menos blur.
+      Ainda é claramente uma imagem de fundo.
     */
-    filter: blur(12px) !important;
+    filter: blur(7px) !important;
 
-    /*
-      Bem discreta.
-    */
-    opacity: .38 !important;
+    opacity: .34 !important;
 
-    transform: scale(1.08) !important;
+    transform: scale(1.04) !important;
 
     pointer-events: none !important;
   }
 
 
-  /* ---------------------------------------------------------
-     ESCURECIMENTO DA IMAGEM
-     --------------------------------------------------------- */
+  /* =====================================================
+     ESCURECE A IMAGEM SEM MATÁ-LA
+     ===================================================== */
 
   .hero::after {
     content: "" !important;
 
     position: absolute !important;
-
     inset: 0 !important;
 
     z-index: 1 !important;
@@ -3861,15 +3855,15 @@ button {
     background:
       linear-gradient(
         90deg,
-        rgba(5,10,17,.98) 0%,
-        rgba(5,10,17,.88) 42%,
-        rgba(5,10,17,.55) 72%,
-        rgba(5,10,17,.68) 100%
+        rgba(5,10,17,.96) 0%,
+        rgba(5,10,17,.82) 42%,
+        rgba(5,10,17,.48) 72%,
+        rgba(5,10,17,.55) 100%
       ),
       linear-gradient(
         180deg,
-        rgba(5,10,17,.35) 0%,
-        rgba(5,10,17,.08) 45%,
+        rgba(5,10,17,.18) 0%,
+        rgba(5,10,17,.05) 55%,
         rgba(5,10,17,.72) 100%
       ) !important;
 
@@ -3877,17 +3871,15 @@ button {
   }
 
 
-  /* ---------------------------------------------------------
+  /* =====================================================
      CONTEÚDO
-     --------------------------------------------------------- */
+     ===================================================== */
 
   .hero-grid {
     position: relative !important;
-
     z-index: 5 !important;
 
     width: 100% !important;
-
     max-width: 100% !important;
 
     min-height: 0 !important;
@@ -3900,21 +3892,16 @@ button {
 
   .hero-copy {
     position: relative !important;
-
     z-index: 6 !important;
 
     width: 100% !important;
-
     max-width: 100% !important;
 
     padding: 0 !important;
   }
 
 
-  /* ---------------------------------------------------------
-     REMOVE A IMAGEM DUPLICADA DO GRID
-     --------------------------------------------------------- */
-
+  /* Remove a composição duplicada */
   .hero-side,
   .hero-devices,
   .hero-device-image,
@@ -3927,27 +3914,21 @@ button {
   }
 
 
-  /* ---------------------------------------------------------
+  /* =====================================================
      EYEBROW
-     --------------------------------------------------------- */
+     ===================================================== */
 
   .hero-copy .eyebrow,
   .hero-content .eyebrow {
-    position: relative !important;
-
-    z-index: 7 !important;
-
     margin: 0 0 24px !important;
 
     color: var(--blue-bright) !important;
 
     font-size: 10px !important;
-
     line-height: 1.2 !important;
 
     letter-spacing: .20em !important;
   }
-
 
   .hero-copy .eyebrow-dot,
   .hero-content .eyebrow-dot {
@@ -3955,17 +3936,15 @@ button {
   }
 
 
-  /* ---------------------------------------------------------
+  /* =====================================================
      TÍTULO
-     --------------------------------------------------------- */
+     ===================================================== */
 
   .hero h1 {
     position: relative !important;
-
     z-index: 7 !important;
 
     width: 100% !important;
-
     max-width: 365px !important;
 
     margin: 0 !important;
@@ -3973,57 +3952,44 @@ button {
     font-size: clamp(3rem, 12.5vw, 4rem) !important;
 
     line-height: .91 !important;
-
     letter-spacing: -.055em !important;
 
     font-weight: 500 !important;
   }
 
 
-  /* ---------------------------------------------------------
+  /* =====================================================
      DESCRIÇÃO
-     --------------------------------------------------------- */
+     ===================================================== */
 
   .hero-description {
     position: relative !important;
-
     z-index: 7 !important;
-
-    width: 100% !important;
 
     max-width: 355px !important;
 
     margin: 27px 0 0 !important;
 
     font-size: 15px !important;
-
     line-height: 1.55 !important;
   }
 
 
-  /* ---------------------------------------------------------
+  /* =====================================================
      BOTÃO
-     --------------------------------------------------------- */
+     ===================================================== */
 
   .hero-actions {
     position: relative !important;
-
     z-index: 8 !important;
 
     margin-top: 30px !important;
   }
 
 
-  .hero-actions .button {
-    position: relative !important;
-
-    z-index: 9 !important;
-  }
-
-
-  /* ---------------------------------------------------------
-     ESCONDE O RODAPÉ INTERNO DO HERO
-     --------------------------------------------------------- */
+  /* =====================================================
+     SEM ESPAÇO EXTRA NO FINAL
+     ===================================================== */
 
   .hero-bottom {
     display: none !important;
@@ -4032,13 +3998,13 @@ button {
 
 
 /* =========================================================
-   CELULARES PEQUENOS
+   TELAS PEQUENAS
    ========================================================= */
 
 @media (max-width: 380px) {
 
   .hero {
-    padding: 100px 24px 48px !important;
+    padding: 100px 24px 45px !important;
   }
 
   .hero h1 {

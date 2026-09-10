@@ -174,10 +174,6 @@ function App() {
               </h2>
             </div>
 
-            <p className="section-intro">
-              Cada projeto nasce de uma necessidade diferente. O resultado
-              precisa parecer com a marca — não com um template.
-            </p>
           </div>
 
           <div className="project-list">
