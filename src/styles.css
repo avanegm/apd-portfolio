@@ -103,8 +103,18 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: var(--cream) !important;
+  padding: 10px 17px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #5b6cff, #4d8fff);
+  color: #07101a !important;
   font-weight: 700 !important;
+  box-shadow: 0 8px 22px rgba(69, 92, 255, .20);
+}
+
+.nav-contact svg {
+  width: 14px;
+  height: 14px;
+  color: #07101a !important;
 }
 
 .nav-contact svg {
@@ -124,6 +134,61 @@ button {
 .menu-button svg {
   width: 22px;
   height: 22px;
+}
+
+
+/* =========================================================
+   COMPONENTES GERAIS — BOTÕES E LINKS
+   ========================================================= */
+
+.button {
+  min-height: 54px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .02em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  color: #07101a !important;
+  background: linear-gradient(135deg, #5b6cff, #4d8fff);
+  box-shadow: 0 14px 35px rgba(69, 92, 255, .20);
+}
+
+.button-primary svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+  color: #07101a !important;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--cream);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.text-link svg {
+  width: 16px;
+  height: 16px;
 }
 
 .hero {
@@ -1480,6 +1545,27 @@ button {
     position: relative !important;
     z-index: 8 !important;
     margin-top: 28px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .hero-actions .button {
+    min-height: 54px !important;
+    padding: 0 22px !important;
+    border-radius: 999px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    color: #07101a !important;
+    background: linear-gradient(135deg, #5b6cff, #4d8fff) !important;
+    box-shadow: 0 14px 35px rgba(69, 92, 255, .20) !important;
+  }
+
+  .hero-actions .button svg {
+    width: 17px !important;
+    height: 17px !important;
+    color: #07101a !important;
   }
 
   .hero-bottom { display: none !important; }
