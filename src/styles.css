@@ -3774,55 +3774,76 @@ button {
 }
 
 /* =========================================================
-   APD — HERO MOBILE DEFINITIVO
+   HERO MOBILE — IMAGEM DECORATIVA NO CANTO INFERIOR
    ========================================================= */
 
 @media (max-width: 700px) {
 
-  /* -----------------------------------------
-     1. LIMPA O HERO
-     ----------------------------------------- */
-
   .hero {
     position: relative !important;
-
-    min-height: 680px !important;
-
-    padding: 112px 30px 48px !important;
-
-    display: block !important;
-
     overflow: hidden !important;
-
     background: #050a11 !important;
   }
 
-
-  /* -----------------------------------------
-     2. DESLIGA TODAS AS CAMADAS ANTIGAS
-     ----------------------------------------- */
-
-  .hero::before,
-  .hero::after {
+  /* Mantém o conteúdo completamente limpo */
+  .hero::before {
     display: none !important;
     content: none !important;
-    background: none !important;
   }
 
+  /* Imagem somente como detalhe visual */
+  .hero::after {
+    content: "" !important;
 
-  /* -----------------------------------------
-     3. DESLIGA A IMAGEM COMO BACKGROUND
-     ----------------------------------------- */
+    position: absolute !important;
 
-  .hero {
-    background-image: none !important;
-    background-color: #050a11 !important;
+    z-index: 1 !important;
+
+    right: -25% !important;
+    bottom: -5% !important;
+
+    width: 75% !important;
+    height: 42% !important;
+
+    background-image: url("/images/hero-devices.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: right bottom !important;
+
+    opacity: .38 !important;
+
+    pointer-events: none !important;
+
+    /*
+      Suaviza a imagem para ela entrar no fundo
+      sem competir com o conteúdo.
+    */
+    -webkit-mask-image:
+      linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0,0,0,.25) 18%,
+        #000 45%,
+        #000 75%,
+        transparent 100%
+      );
+
+    mask-image:
+      linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0,0,0,.25) 18%,
+        #000 45%,
+        #000 75%,
+        transparent 100%
+      );
   }
 
-
-  /* -----------------------------------------
-     4. ESCONDE A COMPOSIÇÃO ANTIGA
-     ----------------------------------------- */
+  .hero-grid,
+  .hero-copy {
+    position: relative !important;
+    z-index: 5 !important;
+  }
 
   .hero-side,
   .hero-devices,
@@ -3833,155 +3854,5 @@ button {
   .hero-textures,
   .device-curves {
     display: none !important;
-  }
-
-
-  /* -----------------------------------------
-     5. GRID VIRA APENAS TEXTO
-     ----------------------------------------- */
-
-  .hero-grid {
-    position: relative !important;
-
-    z-index: 5 !important;
-
-    width: 100% !important;
-    max-width: 100% !important;
-
-    min-height: 0 !important;
-
-    margin: 0 !important;
-
-    display: block !important;
-  }
-
-
-  .hero-copy {
-    position: relative !important;
-
-    z-index: 10 !important;
-
-    width: 100% !important;
-    max-width: 100% !important;
-
-    padding: 0 !important;
-  }
-
-
-  /* -----------------------------------------
-     6. EYEBROW
-     ----------------------------------------- */
-
-  .hero-copy .eyebrow,
-  .hero-content .eyebrow {
-    margin: 0 0 24px !important;
-
-    color: var(--blue-bright) !important;
-
-    font-size: 10px !important;
-
-    line-height: 1.2 !important;
-
-    letter-spacing: .20em !important;
-  }
-
-
-  .hero-copy .eyebrow-dot,
-  .hero-content .eyebrow-dot {
-    display: none !important;
-  }
-
-
-  /* -----------------------------------------
-     7. TÍTULO
-     ----------------------------------------- */
-
-  .hero h1 {
-    position: relative !important;
-
-    z-index: 10 !important;
-
-    width: 100% !important;
-    max-width: 360px !important;
-
-    margin: 0 !important;
-
-    font-size: clamp(3rem, 12.5vw, 4rem) !important;
-
-    line-height: .91 !important;
-
-    letter-spacing: -.055em !important;
-
-    font-weight: 500 !important;
-  }
-
-
-  /* -----------------------------------------
-     8. DESCRIÇÃO
-     ----------------------------------------- */
-
-  .hero-description {
-    position: relative !important;
-
-    z-index: 10 !important;
-
-    max-width: 350px !important;
-
-    margin: 26px 0 0 !important;
-
-    font-size: 15px !important;
-
-    line-height: 1.55 !important;
-  }
-
-
-  /* -----------------------------------------
-     9. BOTÃO
-     ----------------------------------------- */
-
-  .hero-actions {
-    position: relative !important;
-
-    z-index: 10 !important;
-
-    margin-top: 30px !important;
-  }
-
-
-  .hero-actions .button {
-    position: relative !important;
-
-    z-index: 11 !important;
-  }
-
-
-  /* -----------------------------------------
-     10. ESPAÇO INFERIOR
-     ----------------------------------------- */
-
-  .hero-bottom {
-    display: none !important;
-  }
-}
-
-
-/* =========================================================
-   CELULARES PEQUENOS
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-  .hero {
-    min-height: 650px !important;
-
-    padding: 105px 24px 42px !important;
-  }
-
-  .hero h1 {
-    font-size: 2.75rem !important;
-  }
-
-  .hero-description {
-    font-size: 14px !important;
   }
 }
