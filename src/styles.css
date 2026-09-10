@@ -2549,3 +2549,156 @@ button {
   }
 
 }
+
+/* =========================================================
+   HERO MOBILE — TERRA MAIS NÍTIDA
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .hero::before {
+    filter: blur(3px) !important;
+
+    opacity: .48 !important;
+
+    transform: scale(1.025) !important;
+
+    background-size: auto 112% !important;
+    background-position: 76% center !important;
+  }
+
+  .hero::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(5,10,17,.92) 0%,
+        rgba(5,10,17,.70) 34%,
+        rgba(5,10,17,.32) 62%,
+        rgba(5,10,17,.08) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(5,10,17,.20) 0%,
+        rgba(5,10,17,.02) 42%,
+        rgba(5,10,17,.58) 100%
+      ) !important;
+  }
+
+}
+
+/* =========================================================
+   SERVIÇOS — LAYOUT LIMPO
+   Remove divisões internas
+   Adiciona divisão antes de Sobre a APD
+   ========================================================= */
+
+.services {
+  border-bottom: 1px solid var(--line) !important;
+}
+
+
+/* Remove a linha criada pelo pseudo-elemento antigo */
+.services::after {
+  display: none !important;
+  content: none !important;
+}
+
+
+/* Lista sem bordas externas */
+.services .service-list {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+
+/* Remove divisões entre os serviços */
+.services .service {
+  border-right: none !important;
+  border-bottom: none !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .services {
+    border-bottom: 1px solid var(--line) !important;
+  }
+
+  .services .service-list {
+    border: none !important;
+
+    gap: 0 !important;
+  }
+
+  .services .service {
+    border: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+  }
+
+}
+
+/* =========================================================
+   NOSSO PROCESSO — APROXIMA TÍTULO DOS PASSOS
+   ========================================================= */
+
+.process {
+  padding-bottom: 45px !important;
+}
+
+.process .process-steps {
+  margin-top: 28px !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .process {
+    padding-bottom: 38px !important;
+  }
+
+  .process .process-steps {
+    margin-top: 24px !important;
+  }
+
+}
+
+/* =========================================================
+   FOOTER — MAIS COMPACTO
+   ========================================================= */
+
+.footer {
+  padding-top: 42px !important;
+  padding-bottom: 24px !important;
+}
+
+
+/* Faixa inferior do footer */
+.footer-bottom {
+  margin-top: 28px !important;
+  padding-top: 18px !important;
+  padding-bottom: 0 !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .footer {
+    padding-top: 36px !important;
+    padding-bottom: 18px !important;
+  }
+
+  .footer-bottom {
+    margin-top: 24px !important;
+    padding-top: 16px !important;
+  }
+
+}
