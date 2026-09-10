@@ -135,10 +135,7 @@ function App() {
           <div className="hero-overlay" />
 
           <div className="hero-content">
-            <div className="eyebrow">
-              <span className="eyebrow-dot" />
-              AGÊNCIA DE PRESENÇA DIGITAL
-            </div>
+
 
             <h1>
               Sua marca merece
