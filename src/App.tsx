@@ -325,7 +325,7 @@ function App() {
 
             </div>
 
-            <div className="process-steps">
+
               <div className="process-step">
 
                 <span>01</span>
@@ -350,7 +350,7 @@ function App() {
                 <strong>Lançamos</strong>
                 <p>Publicamos e deixamos tudo pronto para crescer.</p>
               </div>
-            </div>
+
           </div>
         </section>
 
