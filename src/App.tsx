@@ -145,7 +145,7 @@ function App() {
 
             <p className="hero-description">
               Criamos experiências digitais
-              que representam sua marca.
+              que representam seu negócio.
             </p>
 
             <div className="hero-actions">
