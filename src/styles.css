@@ -1890,3 +1890,207 @@ button {
 .footer-bottom {
   border-top: 1px solid var(--line) !important;
 }
+
+/* =========================================================
+   APD — TÍTULOS MOBILE
+   VOLTA À COMPOSIÇÃO ORIGINAL
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  /* =========================================
+     HERO
+     ========================================= */
+
+  .hero h1 {
+    width: 100% !important;
+
+    /*
+      Limita a largura para recuperar
+      as quebras originais.
+    */
+    max-width: 315px !important;
+
+    margin: 0 !important;
+
+    font-size: 3.35rem !important;
+
+    line-height: .91 !important;
+
+    letter-spacing: -.06em !important;
+
+    font-weight: 500 !important;
+  }
+
+
+  /* =========================================
+     PROJETOS
+     ========================================= */
+
+  .projects .section-top h2 {
+    width: 100% !important;
+
+    max-width: 315px !important;
+
+    margin: 12px 0 0 !important;
+
+    font-size: 3.35rem !important;
+
+    line-height: .91 !important;
+
+    letter-spacing: -.06em !important;
+
+    font-weight: 500 !important;
+  }
+
+}
+
+
+/* =========================================================
+   CELULARES MENORES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .hero h1,
+  .projects .section-top h2 {
+    max-width: 285px !important;
+
+    font-size: 3.05rem !important;
+
+    line-height: .91 !important;
+
+    letter-spacing: -.06em !important;
+  }
+
+}
+
+/* =========================================================
+   SERVIÇOS — CORREÇÃO DOS ÍCONES
+   Um único ícone dentro de uma única moldura
+   ========================================================= */
+
+/* Mata os elementos antigos */
+.services .service::before,
+.services .service::after,
+.services .service-arrow {
+  display: none !important;
+  content: none !important;
+}
+
+
+/* Card */
+.services .service {
+  position: relative !important;
+  padding-top: 0 !important;
+}
+
+
+/* Ícone + quadrado */
+.services .service-icon {
+  position: relative !important;
+
+  width: 46px !important;
+  height: 46px !important;
+
+  min-width: 46px !important;
+  min-height: 46px !important;
+
+  margin: 0 0 20px !important;
+  padding: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  box-sizing: border-box !important;
+
+  border: 1px solid rgba(79, 143, 255, .85) !important;
+  border-radius: 9px !important;
+
+  background: rgba(42, 94, 190, .06) !important;
+
+  color: var(--blue-bright) !important;
+
+  transform: none !important;
+}
+
+
+/* Ícone dentro do quadrado */
+.services .service-icon svg {
+  display: block !important;
+
+  width: 20px !important;
+  height: 20px !important;
+
+  min-width: 20px !important;
+  min-height: 20px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color: var(--blue-bright) !important;
+
+  stroke-width: 1.6 !important;
+
+  transform: none !important;
+}
+
+
+/* Título */
+.services .service h3 {
+  margin-top: 0 !important;
+}
+
+
+/* Texto */
+.services .service p {
+  margin-top: 10px !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .services .service {
+    padding-top: 0 !important;
+  }
+
+  .services .service-icon {
+    width: 46px !important;
+    height: 46px !important;
+
+    min-width: 46px !important;
+    min-height: 46px !important;
+
+    margin-bottom: 20px !important;
+  }
+
+  .services .service-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+/* =========================================================
+   SERVIÇOS → SOBRE A APD
+   Reduz o espaço entre as seções
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  /* reduz o espaço depois dos serviços */
+  .services {
+    padding-bottom: 34px !important;
+  }
+
+  /* aproxima o início do Sobre */
+  .about {
+    padding-top: 42px !important;
+    border-top: none !important;
+  }
+
+}
