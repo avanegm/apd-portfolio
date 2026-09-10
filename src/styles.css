@@ -2069,22 +2069,15 @@ button {
     transform: scale(1.025) !important;
   }
 
-  .hero::after {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(5,10,17,.92) 0%,
-        rgba(5,10,17,.70) 34%,
-        rgba(5,10,17,.32) 62%,
-        rgba(5,10,17,.08) 100%
-      ),
-      linear-gradient(
-        180deg,
-        rgba(5,10,17,.20) 0%,
-        rgba(5,10,17,.02) 42%,
-        rgba(5,10,17,.58) 100%
-      ) !important;
-  }
+.hero::after {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,10,17,0) 0%,
+      rgba(5,10,17,.01) 50%,
+      rgba(5,10,17,.45) 100%
+    ) !important;
+}
 
   .hero h1 {
     max-width: 315px !important;
@@ -3071,4 +3064,14 @@ button {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
   }
+}
+
+/* Remove o escurecimento preto no topo do Hero */
+.hero::after {
+  background: linear-gradient(
+    180deg,
+    rgba(5, 10, 17, 0) 0%,
+    rgba(5, 10, 17, 0.02) 55%,
+    rgba(5, 10, 17, 0.45) 100%
+  ) !important;
 }

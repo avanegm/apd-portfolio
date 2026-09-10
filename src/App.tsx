@@ -340,9 +340,7 @@ function App() {
             <div className="eyebrow">VAMOS CRIAR?</div>
 
             <h2>
-              Sua marca merece
-              <br />
-              <em>uma presença à altura.</em>
+               Vamos criar algo que <em>represente sua marca.</em>
             </h2>
 
             <div className="contact-actions">
