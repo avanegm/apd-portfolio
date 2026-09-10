@@ -3774,9 +3774,7 @@ button {
 }
 
 /* =========================================
-   HERO MOBILE — CORREÇÃO DEFINITIVA
-   A imagem fica somente como elemento visual
-   no lado direito, sem o texto embutido aparecer.
+   HERO MOBILE — COMPOSIÇÃO FINAL
    ========================================= */
 
 @media (max-width: 700px) {
@@ -3793,79 +3791,131 @@ button {
 
     overflow: hidden !important;
 
-    background-color: #050a11 !important;
-
-    /*
-      A imagem original é horizontal e já possui
-      textos dentro dela.
-      Jogamos a imagem totalmente para a direita,
-      mostrando praticamente só o notebook.
-    */
-    background-image: url("/images/hero-devices.png") !important;
-    background-repeat: no-repeat !important;
-    background-size: auto 115% !important;
-    background-position: right center !important;
+    background: #050a11 !important;
   }
 
-  /*
-    Escurece principalmente o lado esquerdo,
-    onde fica o texto real do site.
-  */
+  /* =========================================
+     IMAGEM — SOMENTE NO LADO DIREITO
+     ========================================= */
+
+  .hero::after {
+    content: "" !important;
+
+    position: absolute !important;
+
+    top: 0 !important;
+    right: -18% !important;
+    bottom: 0 !important;
+
+    width: 72% !important;
+
+    z-index: 1 !important;
+
+    background-image: url("/images/hero-devices.png") !important;
+    background-repeat: no-repeat !important;
+
+    /*
+      Aumentamos bastante a imagem para que
+      o conteúdo indesejado da arte fique fora
+      da área visível.
+    */
+    background-size: auto 125% !important;
+    background-position: right center !important;
+
+    opacity: .9 !important;
+
+    pointer-events: none !important;
+  }
+
+  /* =========================================
+     GRADIENTE — ESCONDE A PARTE ESQUERDA
+     ========================================= */
+
   .hero::before {
     content: "" !important;
+
     position: absolute !important;
     inset: 0 !important;
-    z-index: 1 !important;
+
+    z-index: 2 !important;
 
     background:
       linear-gradient(
         90deg,
-        rgba(5, 10, 17, 1) 0%,
-        rgba(5, 10, 17, .94) 38%,
-        rgba(5, 10, 17, .60) 65%,
-        rgba(5, 10, 17, .18) 100%
+        #050a11 0%,
+        rgba(5,10,17,.98) 28%,
+        rgba(5,10,17,.88) 46%,
+        rgba(5,10,17,.48) 67%,
+        rgba(5,10,17,.08) 100%
       ),
       linear-gradient(
         180deg,
-        rgba(5, 10, 17, .10) 0%,
-        rgba(5, 10, 17, .25) 70%,
-        rgba(5, 10, 17, 1) 100%
+        rgba(5,10,17,.05) 0%,
+        rgba(5,10,17,.10) 55%,
+        #050a11 100%
       ) !important;
 
     opacity: 1 !important;
+
     pointer-events: none !important;
   }
 
-  /*
-    Conteúdo verdadeiro do site fica acima da imagem.
-  */
+  /* =========================================
+     CONTEÚDO
+     ========================================= */
+
   .hero-content,
   .hero-copy {
     position: relative !important;
-    z-index: 3 !important;
+
+    z-index: 5 !important;
 
     width: 100% !important;
     max-width: 360px !important;
   }
 
+  /* Eyebrow */
+
+  .hero-content .eyebrow,
+  .hero-copy .eyebrow {
+    margin-bottom: 24px !important;
+
+    font-size: 11px !important;
+    letter-spacing: .22em !important;
+  }
+
+  /* Título */
+
   .hero h1 {
     max-width: 360px !important;
 
+    margin: 0 !important;
+
     font-size: clamp(3rem, 12vw, 4rem) !important;
+
     line-height: .91 !important;
+
     letter-spacing: -.055em !important;
   }
 
-  .hero p {
-    max-width: 330px !important;
+  /* Texto */
 
-    margin-top: 24px !important;
+  .hero p {
+    max-width: 340px !important;
+
+    margin-top: 26px !important;
 
     font-size: 16px !important;
+
     line-height: 1.5 !important;
   }
 
+  /* Botão */
+
   .hero .button {
     margin-top: 30px !important;
+
+    position: relative !important;
+    z-index: 6 !important;
   }
 }

@@ -484,7 +484,6 @@ function App() {
             Sua marca merece estar bem representada.
           </span>
 
-          <span>Sorocaba · SP</span>
         </div>
 
 
