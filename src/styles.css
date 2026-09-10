@@ -562,6 +562,14 @@ button {
   color: var(--blue-bright) !important;
 }
 
+.project-soon {
+  display: inline-block;
+  margin-top: 13px !important;
+  color: var(--muted) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.02em;
+}
+
 .services {
   position: relative;
   max-width: none !important;
@@ -724,7 +732,7 @@ button {
 
 .about-intro h2 em {
   color: var(--blue-bright);
-  font-family: "Playfair Display", serif;
+  font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
 }
@@ -830,7 +838,7 @@ button {
 
 .process-intro h3 em {
   color: var(--blue-bright);
-  font-family: "Playfair Display", serif;
+  font-family: var(--serif);
   font-style: italic;
 }
 

@@ -39,7 +39,7 @@ const projects = [
     category: "Site institucional · Advocacia",
     description:
       "Uma experiência institucional pensada para transmitir confiança, autoridade e clareza desde o primeiro contato.",
-    href: "#",
+    href: null,
     tone: "project-blue",
     label: "JOÃO CARLOS",
     sublabel: "ADVOCACIA",
@@ -210,17 +210,17 @@ function App() {
                     <div />
                   </div>
 
-                  <a
-                    className="project-view"
-                    href={project.href}
-                    target={
-                      project.href !== "#" ? "_blank" : undefined
-                    }
-                    rel="noreferrer"
-                    aria-label={`Abrir ${project.title}`}
-                  >
-                    <ExternalLink />
-                  </a>
+                  {project.href && (
+                    <a
+                      className="project-view"
+                      href={project.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Abrir ${project.title}`}
+                    >
+                      <ExternalLink />
+                    </a>
+                  )}
                 </div>
 
                 <div className="project-info">
@@ -237,16 +237,14 @@ function App() {
 
                     <p>{project.description}</p>
 
-                    <a
-                      href={project.href}
-                      target={
-                        project.href !== "#" ? "_blank" : undefined
-                      }
-                      rel="noreferrer"
-                    >
-                      Ver projeto
-                      <ArrowRight />
-                    </a>
+                    {project.href ? (
+                      <a href={project.href} target="_blank" rel="noreferrer">
+                        Ver projeto
+                        <ArrowRight />
+                      </a>
+                    ) : (
+                      <span className="project-soon">Em breve</span>
+                    )}
                   </div>
                 </div>
               </article>
