@@ -1839,3 +1839,229 @@ button {
   border-top: 1px solid var(--line) !important;
 }
 }
+
+/* =========================================================
+   HERO MOBILE — TERRA AO FUNDO
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .hero {
+    position: relative !important;
+    min-height: 0 !important;
+    height: auto !important;
+
+    padding: 105px 30px 52px !important;
+
+    overflow: hidden !important;
+
+    background: #050a11 !important;
+  }
+
+
+  /* =====================================================
+     TERRA — FUNDO DO HERO
+     ===================================================== */
+
+  .hero::before {
+    content: "" !important;
+
+    position: absolute !important;
+
+    /*
+      Aumentamos a área para o blur não criar
+      bordas perceptíveis.
+    */
+    top: -80px !important;
+    right: -180px !important;
+    bottom: -80px !important;
+    left: -40px !important;
+
+    z-index: 0 !important;
+
+    background-image: url("/images/cta-earth.png") !important;
+    background-repeat: no-repeat !important;
+
+    /*
+      Terra grande atrás do conteúdo.
+    */
+    background-size: auto 105% !important;
+
+    background-position: 82% center !important;
+
+    /*
+      Bem mais suave que no CTA.
+    */
+    filter: blur(14px) !important;
+
+    opacity: .30 !important;
+
+    transform: scale(1.08) !important;
+
+    pointer-events: none !important;
+  }
+
+
+  /* =====================================================
+     GRADIENTE SOBRE A TERRA
+     ===================================================== */
+
+  .hero::after {
+    content: "" !important;
+
+    position: absolute !important;
+    inset: 0 !important;
+
+    z-index: 1 !important;
+
+    pointer-events: none !important;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(5, 10, 17, .98) 0%,
+        rgba(5, 10, 17, .90) 34%,
+        rgba(5, 10, 17, .62) 62%,
+        rgba(5, 10, 17, .28) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(5, 10, 17, .20) 0%,
+        rgba(5, 10, 17, .04) 45%,
+        rgba(5, 10, 17, .72) 100%
+      );
+  }
+
+
+  /* =====================================================
+     CONTEÚDO NA FRENTE
+     ===================================================== */
+
+  .hero-grid {
+    position: relative !important;
+
+    z-index: 5 !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    min-height: 0 !important;
+
+    margin: 0 !important;
+
+    display: block !important;
+  }
+
+
+  .hero-copy {
+    position: relative !important;
+
+    z-index: 6 !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    padding: 0 !important;
+  }
+
+
+  /* Remove qualquer imagem antiga do Hero */
+
+  .hero-side,
+  .hero-devices,
+  .hero-device-image,
+  .hero-device,
+  .hero-phone,
+  .hero-tech,
+  .hero-textures,
+  .device-curves {
+    display: none !important;
+  }
+
+
+  /* =====================================================
+     EYEBROW
+     ===================================================== */
+
+  .hero-copy .eyebrow,
+  .hero-content .eyebrow {
+    margin: 0 0 24px !important;
+
+    color: var(--blue-bright) !important;
+
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+
+    letter-spacing: .20em !important;
+  }
+
+
+  .hero-copy .eyebrow-dot,
+  .hero-content .eyebrow-dot {
+    display: none !important;
+  }
+
+
+  /* =====================================================
+     HEADLINE
+     ===================================================== */
+
+  .hero h1 {
+    position: relative !important;
+
+    z-index: 7 !important;
+
+    max-width: 365px !important;
+
+    margin: 0 !important;
+
+    font-size: clamp(3rem, 12.5vw, 4rem) !important;
+
+    line-height: .91 !important;
+
+    letter-spacing: -.055em !important;
+
+    font-weight: 500 !important;
+  }
+
+
+  /* =====================================================
+     DESCRIÇÃO MAIS CURTA
+     ===================================================== */
+
+  .hero-description {
+    position: relative !important;
+
+    z-index: 7 !important;
+
+    max-width: 320px !important;
+
+    margin: 24px 0 0 !important;
+
+    font-size: 14px !important;
+
+    line-height: 1.5 !important;
+  }
+
+
+  /* =====================================================
+     BOTÃO
+     ===================================================== */
+
+  .hero-actions {
+    position: relative !important;
+
+    z-index: 8 !important;
+
+    margin-top: 28px !important;
+  }
+
+
+  /* =====================================================
+     REMOVE ELEMENTOS EXTRAS DO FINAL DO HERO
+     ===================================================== */
+
+  .hero-bottom {
+    display: none !important;
+  }
+}
