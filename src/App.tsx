@@ -411,10 +411,6 @@ function App() {
           </a>
         </div>
 
-        <div className="footer-bottom">
-          <span>© 2026 APD — AGÊNCIA DE PRESENÇA DIGITAL</span>
-          <span>DESIGN · DESENVOLVIMENTO · ESTRATÉGIA</span>
-        </div>
       </footer>
     </div>
   );
