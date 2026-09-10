@@ -1863,673 +1863,180 @@ button {
   .footer-socials { gap: 6px !important; }
 }
 
+
+/* =========================================================
+   APD V2 — OVERRIDES FINAIS
+   ========================================================= */
+
+/* HEADER */
+.header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  height: 76px !important;
+  background: #060a10 !important;
+  border-bottom: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,.18) !important;
+}
+
+/* HERO */
+.hero-description {
+  max-width: 440px !important;
+  color: rgba(190,200,214,.82) !important;
+}
+.hero-actions {
+  margin-top: 24px !important;
+}
+.hero-actions .button-primary {
+  min-height: 50px !important;
+  padding: 0 20px !important;
+  font-size: 11px !important;
+  gap: 10px !important;
+}
+
+/* PROJECTS */
 .projects {
   border-top: 1px solid var(--line) !important;
+  padding-top: 78px !important;
+}
+.project-list {
+  gap: 56px !important;
+}
+.project-preview {
+  transition: transform .35s ease, box-shadow .35s ease !important;
+}
+.project:hover .project-preview {
+  transform: translateY(-3px);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.10),
+    0 18px 45px rgba(0,0,0,.18) !important;
+}
+.project-details p {
+  max-width: 520px !important;
+}
+.project-details a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+.project-details a svg {
+  width: 16px !important;
+  height: 16px !important;
+  transition: transform .25s ease !important;
+}
+.project-details a:hover svg {
+  transform: translateX(3px);
 }
 
+/* SERVICES — uma única moldura por serviço, sem divisões internas */
 .services {
   border-top: 1px solid var(--line) !important;
+  border-bottom: 1px solid var(--line) !important;
 }
-
 .services::after {
   display: none !important;
+  content: none !important;
 }
-
-.about {
-  border-top: none !important;
+.services .service-list {
+  border: none !important;
 }
-
-.contact {
-  border-top: none !important;
+.services .service {
+  border: none !important;
+  position: relative !important;
 }
-
-.footer {
-  border-top: none !important;
-}
-
-.footer-bottom {
-  border-top: 1px solid var(--line) !important;
-}
-
-/* =========================================================
-   APD — TÍTULOS MOBILE
-   VOLTA À COMPOSIÇÃO ORIGINAL
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-  /* =========================================
-     HERO
-     ========================================= */
-
-  .hero h1 {
-    width: 100% !important;
-
-    /*
-      Limita a largura para recuperar
-      as quebras originais.
-    */
-    max-width: 315px !important;
-
-    margin: 0 !important;
-
-    font-size: 3.35rem !important;
-
-    line-height: .91 !important;
-
-    letter-spacing: -.06em !important;
-
-    font-weight: 500 !important;
-  }
-
-
-  /* =========================================
-     PROJETOS
-     ========================================= */
-
-  .projects .section-top h2 {
-    width: 100% !important;
-
-    max-width: 315px !important;
-
-    margin: 12px 0 0 !important;
-
-    font-size: 3.35rem !important;
-
-    line-height: .91 !important;
-
-    letter-spacing: -.06em !important;
-
-    font-weight: 500 !important;
-  }
-
-}
-
-
-/* =========================================================
-   CELULARES MENORES
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-  .hero h1,
-  .projects .section-top h2 {
-    max-width: 285px !important;
-
-    font-size: 3.05rem !important;
-
-    line-height: .91 !important;
-
-    letter-spacing: -.06em !important;
-  }
-
-}
-
-/* =========================================================
-   SERVIÇOS — CORREÇÃO DOS ÍCONES
-   Um único ícone dentro de uma única moldura
-   ========================================================= */
-
-/* Mata os elementos antigos */
 .services .service::before,
 .services .service::after,
 .services .service-arrow {
   display: none !important;
   content: none !important;
 }
-
-
-/* Card */
-.services .service {
-  position: relative !important;
-  padding-top: 0 !important;
-}
-
-
-/* Ícone + quadrado */
 .services .service-icon {
-  position: relative !important;
-
   width: 46px !important;
   height: 46px !important;
-
   min-width: 46px !important;
   min-height: 46px !important;
-
-  margin: 0 0 20px !important;
+  margin: 0 0 17px !important;
   padding: 0 !important;
-
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-
-  box-sizing: border-box !important;
-
-  border: 1px solid rgba(79, 143, 255, .85) !important;
+  border: 1px solid rgba(79,143,255,.78) !important;
   border-radius: 9px !important;
-
-  background: rgba(42, 94, 190, .06) !important;
-
+  background: rgba(42,94,190,.055) !important;
   color: var(--blue-bright) !important;
-
-  transform: none !important;
+  box-shadow: 0 0 24px rgba(45,111,255,.06) !important;
 }
-
-
-/* Ícone dentro do quadrado */
 .services .service-icon svg {
-  display: block !important;
-
   width: 20px !important;
   height: 20px !important;
-
-  min-width: 20px !important;
-  min-height: 20px !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-
   color: var(--blue-bright) !important;
-
-  stroke-width: 1.6 !important;
-
-  transform: none !important;
+  stroke-width: 1.55 !important;
 }
-
-
-/* Título */
 .services .service h3 {
-  margin-top: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.25 !important;
 }
-
-
-/* Texto */
 .services .service p {
-  margin-top: 10px !important;
+  max-width: 220px !important;
+  font-size: 9.5px !important;
+  line-height: 1.55 !important;
 }
 
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-  .services .service {
-    padding-top: 0 !important;
-  }
-
-  .services .service-icon {
-    width: 46px !important;
-    height: 46px !important;
-
-    min-width: 46px !important;
-    min-height: 46px !important;
-
-    margin-bottom: 20px !important;
-  }
-
-  .services .service-icon svg {
-    width: 20px !important;
-    height: 20px !important;
-  }
+/* ABOUT */
+.about {
+  border-top: none !important;
 }
 
-/* =========================================================
-   SERVIÇOS → SOBRE A APD
-   Reduz o espaço entre as seções
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-  /* reduz o espaço depois dos serviços */
-  .services {
-    padding-bottom: 34px !important;
-  }
-
-  /* aproxima o início do Sobre */
-  .about {
-    padding-top: 42px !important;
-    border-top: none !important;
-  }
-
+/* PROCESSO */
+.about-process {
+  margin-top: 46px !important;
+  padding-top: 26px !important;
+}
+.process-steps {
+  margin-top: 20px !important;
 }
 
-/* =========================================================
-   APD — HERO MOBILE
-   TERRA VISÍVEL + BLUR SUAVE
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-  /* ---------------------------------------------------------
-     HERO
-     --------------------------------------------------------- */
-
-  .hero {
-    position: relative !important;
-
-    min-height: 0 !important;
-    height: auto !important;
-
-    padding: 105px 30px 52px !important;
-
-    display: block !important;
-
-    overflow: hidden !important;
-
-    background: #050a11 !important;
-  }
-
-
-  /* ---------------------------------------------------------
-     TERRA AO FUNDO
-     --------------------------------------------------------- */
-
-  .hero::before {
-    content: "" !important;
-
-    position: absolute !important;
-
-    /*
-      Terra grande, entrando pelo lado direito.
-    */
-    top: -30px !important;
-    right: -145px !important;
-    bottom: -100px !important;
-    left: -20px !important;
-
-    z-index: 0 !important;
-
-    background-image: url("/images/cta-earth.png") !important;
-
-    background-repeat: no-repeat !important;
-
-    /*
-      Grande o suficiente para ocupar
-      boa parte do Hero.
-    */
-    background-size: auto 112% !important;
-
-    background-position: 76% center !important;
-
-    /*
-      Blur mais leve.
-      A Terra continua reconhecível.
-    */
-    filter: blur(7px) !important;
-
-    opacity: .48 !important;
-
-    transform: scale(1.04) !important;
-
-    pointer-events: none !important;
-  }
-
-
-  /* ---------------------------------------------------------
-     GRADIENTE — ESCURECE O LADO DO TEXTO
-     --------------------------------------------------------- */
-
-  .hero::after {
-    content: "" !important;
-
-    position: absolute !important;
-    inset: 0 !important;
-
-    z-index: 1 !important;
-
-    pointer-events: none !important;
-
-    background:
-      linear-gradient(
-        90deg,
-        rgba(5,10,17,.94) 0%,
-        rgba(5,10,17,.78) 34%,
-        rgba(5,10,17,.40) 60%,
-        rgba(5,10,17,.12) 100%
-      ),
-      linear-gradient(
-        180deg,
-        rgba(5,10,17,.28) 0%,
-        rgba(5,10,17,.02) 42%,
-        rgba(5,10,17,.65) 100%
-      ) !important;
-  }
-
-
-  /* ---------------------------------------------------------
-     CONTEÚDO
-     --------------------------------------------------------- */
-
-  .hero-grid {
-    position: relative !important;
-
-    z-index: 5 !important;
-
-    width: 100% !important;
-    max-width: 100% !important;
-
-    min-height: 0 !important;
-
-    margin: 0 !important;
-
-    display: block !important;
-  }
-
-
-  .hero-copy {
-    position: relative !important;
-
-    z-index: 6 !important;
-
-    width: 100% !important;
-    max-width: 100% !important;
-
-    padding: 0 !important;
-  }
-
-
-  /* Remove a antiga imagem do notebook */
-  .hero-side,
-  .hero-devices,
-  .hero-device-image,
-  .hero-device,
-  .hero-phone,
-  .hero-tech,
-  .hero-textures,
-  .device-curves {
-    display: none !important;
-  }
-
-
-  /* ---------------------------------------------------------
-     EYEBROW
-     --------------------------------------------------------- */
-
-  .hero-copy .eyebrow,
-  .hero-content .eyebrow {
-    margin: 0 0 24px !important;
-
-    color: var(--blue-bright) !important;
-
-    font-size: 10px !important;
-
-    line-height: 1.2 !important;
-
-    letter-spacing: .20em !important;
-  }
-
-  .hero-copy .eyebrow-dot,
-  .hero-content .eyebrow-dot {
-    display: none !important;
-  }
-
-
-  /* ---------------------------------------------------------
-     TÍTULO
-     --------------------------------------------------------- */
-
-  .hero h1 {
-    position: relative !important;
-
-    z-index: 7 !important;
-
-    width: 100% !important;
-
-    max-width: 315px !important;
-
-    margin: 0 !important;
-
-    font-size: 3.35rem !important;
-
-    line-height: .91 !important;
-
-    letter-spacing: -.06em !important;
-
-    font-weight: 500 !important;
-  }
-
-
-  /* ---------------------------------------------------------
-     DESCRIÇÃO
-     --------------------------------------------------------- */
-
-  .hero-description {
-    position: relative !important;
-
-    z-index: 7 !important;
-
-    max-width: 320px !important;
-
-    margin: 24px 0 0 !important;
-
-    font-size: 14px !important;
-
-    line-height: 1.5 !important;
-  }
-
-
-  /* ---------------------------------------------------------
-     BOTÃO
-     --------------------------------------------------------- */
-
-  .hero-actions {
-    position: relative !important;
-
-    z-index: 8 !important;
-
-    margin-top: 28px !important;
-  }
-
-  .hero-actions .button {
-    position: relative !important;
-    z-index: 9 !important;
-  }
-
-
-  /* ---------------------------------------------------------
-     REMOVE ESPAÇO EXTRA
-     --------------------------------------------------------- */
-
-  .hero-bottom {
-    display: none !important;
-  }
+/* CTA */
+.contact {
+  border-top: none !important;
+}
+.contact-actions .button-primary {
+  min-height: 40px !important;
+  height: 40px !important;
+  padding: 0 17px !important;
+  font-size: 10px !important;
 }
 
-
-/* =========================================================
-   TELAS PEQUENAS
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-  .hero {
-    padding: 100px 24px 48px !important;
-  }
-
-  .hero h1 {
-    max-width: 285px !important;
-    font-size: 3.05rem !important;
-  }
-
-  .hero-description {
-    font-size: 14px !important;
-  }
+/* FOOTER */
+.footer {
+  border-top: none !important;
+  padding-top: 40px !important;
+  padding-bottom: 22px !important;
 }
-
-/* =========================================================
-   SERVIÇOS MOBILE — AJUSTE FINAL
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-  /* =====================================================
-     REMOVE OS ELEMENTOS FANTASMAS
-     ===================================================== */
-
-  .services .service::before,
-  .services .service::after {
-    content: none !important;
-    display: none !important;
-  }
-
-
-  /* =====================================================
-     GRID DOS SERVIÇOS
-     ===================================================== */
-
-  .services .service-list {
-    border-top: 1px solid var(--line) !important;
-    border-bottom: 1px solid var(--line) !important;
-
-    align-items: stretch !important;
-  }
-
-
-  /* =====================================================
-     CADA CARD
-     ===================================================== */
-
-  .services .service {
-    min-height: 0 !important;
-
-    height: 205px !important;
-
-    padding: 28px 16px 18px !important;
-
-    display: flex !important;
-
-    flex-direction: column !important;
-
-    align-items: flex-start !important;
-
-    justify-content: flex-start !important;
-
-    gap: 0 !important;
-
-    position: relative !important;
-
-    box-sizing: border-box !important;
-  }
-
-
-  /* primeira coluna */
-  .services .service:nth-child(1),
-  .services .service:nth-child(3) {
-    padding-left: 0 !important;
-  }
-
-
-  /* segunda coluna */
-  .services .service:nth-child(2),
-  .services .service:nth-child(4) {
-    padding-right: 0 !important;
-  }
-
-
-  /* =====================================================
-     ÍCONE
-     ===================================================== */
-
-  .services .service-icon {
-    width: 46px !important;
-    height: 46px !important;
-
-    min-width: 46px !important;
-    min-height: 46px !important;
-
-    flex: 0 0 46px !important;
-
-    margin: 0 0 17px !important;
-    padding: 0 !important;
-
-    display: flex !important;
-
-    align-items: center !important;
-    justify-content: center !important;
-
-    box-sizing: border-box !important;
-
-    border: 1px solid rgba(79, 143, 255, .85) !important;
-
-    border-radius: 9px !important;
-
-    background: rgba(42, 94, 190, .06) !important;
-
-    color: var(--blue-bright) !important;
-  }
-
-
-  .services .service-icon svg {
-    display: block !important;
-
-    width: 20px !important;
-    height: 20px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    color: var(--blue-bright) !important;
-
-    stroke-width: 1.6 !important;
-  }
-
-
-  /* =====================================================
-     TÍTULO
-     ===================================================== */
-
-  .services .service h3 {
-    margin: 0 !important;
-
-    font-size: 15px !important;
-
-    line-height: 1.2 !important;
-  }
-
-
-  /* =====================================================
-     DESCRIÇÃO
-     ===================================================== */
-
-  .services .service p {
-    max-width: 150px !important;
-
-    margin: 9px 0 0 !important;
-
-    font-size: 9px !important;
-
-    line-height: 1.45 !important;
-  }
+.footer-tagline {
+  margin: 14px 0 0 !important;
+  color: #727d8d !important;
+  font-size: 9px !important;
+  letter-spacing: .04em !important;
 }
-
-/* =========================================================
-   HEADER — FUNDO SÓLIDO AO ROLAR
-   ========================================================= */
-
-.header {
-  position: fixed !important;
-
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-
-  z-index: 1000 !important;
-
-  width: 100% !important;
-  height: 76px !important;
-
-  background: #060a10 !important;
-
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-
-  border-bottom: none !important;
-
-  box-shadow: 0 8px 30px rgba(0, 0, 0, .18) !important;
+.footer-bottom {
+  grid-column: 1 / -1 !important;
+  margin-top: 26px !important;
+  padding-top: 16px !important;
+  border-top: 1px solid var(--line) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+  color: #5f6875 !important;
+  font-size: 7px !important;
+  line-height: 1.4 !important;
+  letter-spacing: .12em !important;
 }
-
 
 /* =========================================================
    MOBILE
@@ -2539,32 +2046,27 @@ button {
 
   .header {
     height: 76px !important;
-
-    background: #060a10 !important;
-
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, .18) !important;
+    padding: 0 30px !important;
   }
 
-}
+  .nav.nav-open {
+    top: 76px !important;
+  }
 
-/* =========================================================
-   HERO MOBILE — TERRA MAIS NÍTIDA
-   ========================================================= */
-
-@media (max-width: 700px) {
+  /* HERO */
+  .hero {
+    padding: 105px 30px 48px !important;
+  }
 
   .hero::before {
-    filter: blur(3px) !important;
-
-    opacity: .48 !important;
-
-    transform: scale(1.025) !important;
-
+    inset: -30px -145px -100px -20px !important;
+    background-image: url("/images/cta-earth.png") !important;
+    background-repeat: no-repeat !important;
     background-size: auto 112% !important;
     background-position: 76% center !important;
+    filter: blur(3px) !important;
+    opacity: .48 !important;
+    transform: scale(1.025) !important;
   }
 
   .hero::after {
@@ -2584,121 +2086,369 @@ button {
       ) !important;
   }
 
-}
+  .hero h1 {
+    max-width: 315px !important;
+    margin: 0 !important;
+    font-size: 3.35rem !important;
+    line-height: .91 !important;
+    letter-spacing: -.06em !important;
+    font-weight: 500 !important;
+  }
 
-/* =========================================================
-   SERVIÇOS — LAYOUT LIMPO
-   Remove divisões internas
-   Adiciona divisão antes de Sobre a APD
-   ========================================================= */
+  .hero-description {
+    max-width: 320px !important;
+    margin: 22px 0 0 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
 
-.services {
-  border-bottom: 1px solid var(--line) !important;
-}
+  .hero-actions {
+    margin-top: 27px !important;
+  }
 
+  .hero-actions .button-primary {
+    min-height: 48px !important;
+    padding: 0 18px !important;
+    font-size: 10.5px !important;
+  }
 
-/* Remove a linha criada pelo pseudo-elemento antigo */
-.services::after {
-  display: none !important;
-  content: none !important;
-}
+  /* PROJETOS */
+  .projects {
+    padding-top: 68px !important;
+    padding-bottom: 76px !important;
+  }
 
+  .projects .section-top {
+    margin-bottom: 38px !important;
+  }
 
-/* Lista sem bordas externas */
-.services .service-list {
-  border-top: none !important;
-  border-bottom: none !important;
-}
+  .projects .section-top h2 {
+    max-width: 315px !important;
+    margin: 12px 0 0 !important;
+    font-size: 3.35rem !important;
+    line-height: .91 !important;
+    letter-spacing: -.06em !important;
+    font-weight: 500 !important;
+  }
 
+  .project-list {
+    gap: 62px !important;
+  }
 
-/* Remove divisões entre os serviços */
-.services .service {
-  border-right: none !important;
-  border-bottom: none !important;
-}
+  .project-preview {
+    height: 220px !important;
+    border-radius: 6px !important;
+  }
 
+  .project-info {
+    margin-top: 18px !important;
+  }
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+  .project-details h3 {
+    margin-top: 7px !important;
+    font-size: 20px !important;
+  }
 
-@media (max-width: 700px) {
+  .project-details p {
+    max-width: 320px !important;
+    margin-top: 0 !important;
+    font-size: 11px !important;
+    line-height: 1.55 !important;
+  }
 
+  .project-details a {
+    margin-top: 14px !important;
+    font-size: 11px !important;
+  }
+
+  /* SERVIÇOS */
   .services {
+    padding: 58px 24px 38px !important;
     border-bottom: 1px solid var(--line) !important;
   }
 
-  .services .service-list {
-    border: none !important;
+  .services-heading {
+    margin-bottom: 24px !important;
+  }
 
-    gap: 0 !important;
+  .services .service-list {
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+    border: none !important;
   }
 
   .services .service {
+    height: 205px !important;
+    min-height: 205px !important;
+    padding: 25px 16px 18px !important;
     border: none !important;
-    border-right: none !important;
-    border-bottom: none !important;
   }
 
-}
-
-/* =========================================================
-   NOSSO PROCESSO — APROXIMA TÍTULO DOS PASSOS
-   ========================================================= */
-
-.process {
-  padding-bottom: 45px !important;
-}
-
-.process .process-steps {
-  margin-top: 28px !important;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-  .process {
-    padding-bottom: 38px !important;
+  .services .service:nth-child(1),
+  .services .service:nth-child(3) {
+    padding-left: 0 !important;
   }
 
-  .process .process-steps {
-    margin-top: 24px !important;
+  .services .service:nth-child(2),
+  .services .service:nth-child(4) {
+    padding-right: 0 !important;
   }
 
-}
+  .services .service-icon {
+    width: 46px !important;
+    height: 46px !important;
+    margin-bottom: 16px !important;
+  }
 
-/* =========================================================
-   FOOTER — MAIS COMPACTO
-   ========================================================= */
+  .services .service h3 {
+    font-size: 15px !important;
+  }
 
-.footer {
-  padding-top: 42px !important;
-  padding-bottom: 24px !important;
-}
+  .services .service p {
+    max-width: 150px !important;
+    margin-top: 8px !important;
+    font-size: 9px !important;
+    line-height: 1.48 !important;
+  }
 
+  /* SOBRE */
+  .about {
+    padding: 42px 24px 38px !important;
+  }
 
-/* Faixa inferior do footer */
-.footer-bottom {
-  margin-top: 28px !important;
-  padding-top: 18px !important;
-  padding-bottom: 0 !important;
-}
+  .about-intro h2 {
+    font-size: clamp(3rem, 14vw, 4.15rem) !important;
+    line-height: .90 !important;
+  }
 
+  .about-text {
+    margin-top: 22px !important;
+  }
 
-/* MOBILE */
+  .about-text p {
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+  }
 
-@media (max-width: 700px) {
+  /* PROCESSO — 2x2 no mobile, mais compacto */
+  .about-process {
+    margin-top: 38px !important;
+    padding-top: 24px !important;
+  }
 
+  .process-steps {
+    grid-template-columns: 1fr 1fr !important;
+    margin-top: 22px !important;
+    border-top: 1px solid rgba(255,255,255,.08) !important;
+    border-bottom: 1px solid rgba(255,255,255,.08) !important;
+  }
+
+  .process-step {
+    min-height: 112px !important;
+    padding: 18px 16px !important;
+    border-left: 1px solid rgba(255,255,255,.08) !important;
+    border-bottom: 1px solid rgba(255,255,255,.08) !important;
+  }
+
+  .process-step:nth-child(odd) {
+    border-left: 0 !important;
+  }
+
+  .process-step:nth-child(3),
+  .process-step:nth-child(4) {
+    border-bottom: 0 !important;
+  }
+
+  .process-step > span {
+    margin-bottom: 9px !important;
+    font-size: 12px !important;
+  }
+
+  .process-step strong {
+    font-size: 14px !important;
+  }
+
+  .process-step p {
+    max-width: 175px !important;
+    font-size: 10px !important;
+    line-height: 1.45 !important;
+  }
+
+  /* CTA */
+  .contact {
+    padding: 32px 20px 18px !important;
+  }
+
+  .contact-inner {
+    min-height: 218px !important;
+    padding: 25px 22px !important;
+  }
+
+  .contact h2 {
+    max-width: 92% !important;
+    font-size: 1.62rem !important;
+    line-height: 1.05 !important;
+  }
+
+  .contact-actions {
+    margin-top: 16px !important;
+  }
+
+  /* FOOTER */
   .footer {
-    padding-top: 36px !important;
-    padding-bottom: 18px !important;
+    padding: 34px 20px 18px !important;
+    grid-template-columns: 1fr auto !important;
+    gap: 22px !important;
+  }
+
+  .footer-tagline {
+    max-width: 180px !important;
+    font-size: 8px !important;
+    line-height: 1.45 !important;
+  }
+
+  .footer-socials {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    align-self: start !important;
+    gap: 7px !important;
+  }
+
+  .footer-socials a {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .footer-center {
+    display: none !important;
   }
 
   .footer-bottom {
-    margin-top: 24px !important;
-    padding-top: 16px !important;
+    margin-top: 22px !important;
+    padding-top: 14px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 5px !important;
+    font-size: 6.5px !important;
+    letter-spacing: .10em !important;
+  }
+}
+
+/* TELAS PEQUENAS */
+@media (max-width: 380px) {
+
+  .hero {
+    padding: 100px 24px 44px !important;
   }
 
+  .hero h1,
+  .projects .section-top h2 {
+    max-width: 285px !important;
+    font-size: 3.05rem !important;
+    line-height: .91 !important;
+    letter-spacing: -.06em !important;
+  }
+
+  .hero-description {
+    max-width: 285px !important;
+    font-size: 13.5px !important;
+  }
+
+  .hero-actions .button-primary {
+    min-height: 46px !important;
+    padding: 0 16px !important;
+    font-size: 10px !important;
+  }
+
+  .projects,
+  .services,
+  .about {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .project-preview {
+    height: 205px !important;
+  }
+
+  .project-list {
+    gap: 54px !important;
+  }
+
+  .services .service {
+    height: 195px !important;
+    min-height: 195px !important;
+    padding-top: 23px !important;
+  }
+
+  .services .service-icon {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  .services .service h3 {
+    font-size: 13px !important;
+  }
+
+  .services .service p {
+    max-width: 138px !important;
+    font-size: 8.5px !important;
+  }
+
+  .about {
+    padding-top: 40px !important;
+  }
+
+  .about-intro h2 {
+    font-size: 2.9rem !important;
+  }
+
+  .process-step {
+    min-height: 108px !important;
+    padding: 16px 13px !important;
+  }
+
+  .process-step strong {
+    font-size: 13px !important;
+  }
+
+  .process-step p {
+    font-size: 9px !important;
+  }
+
+  .contact {
+    padding: 28px 16px 16px !important;
+  }
+
+  .contact-inner {
+    min-height: 214px !important;
+    padding: 24px 18px !important;
+  }
+
+  .contact h2 {
+    font-size: 1.58rem !important;
+  }
+}
+
+/* ACESSIBILIDADE */
+.menu-button:focus-visible,
+.button:focus-visible,
+.project-details a:focus-visible,
+.project-view:focus-visible,
+.footer-socials a:focus-visible,
+.nav a:focus-visible {
+  outline: 2px solid var(--blue-bright) !important;
+  outline-offset: 4px !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

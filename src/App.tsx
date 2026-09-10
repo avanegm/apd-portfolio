@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import {
-  ArrowDownRight,
   ArrowRight,
   ArrowUpRight,
   ExternalLink,
@@ -28,7 +27,7 @@ const projects = [
     title: "Isabella Reis Nails",
     category: "Landing page · Beauty",
     description:
-      "Uma presença digital elegante para apresentar o trabalho, serviços e canais de agendamento de uma nail designer.",
+      "Uma experiência digital elegante para apresentar o trabalho e facilitar o agendamento.",
     href: "https://isabella-reis-nails.vercel.app",
     tone: "project-pink",
     label: "ISABELLA REIS",
@@ -119,7 +118,8 @@ function App() {
         <button
           className="menu-button"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Abrir menu"
+          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={menuOpen}
           type="button"
         >
           {menuOpen ? <X /> : <Menu />}
@@ -145,7 +145,7 @@ function App() {
 
             <p className="hero-description">
               Criamos experiências digitais
-              que representam seu negócio.
+              que representam sua marca.
             </p>
 
             <div className="hero-actions">
@@ -364,11 +364,9 @@ function App() {
             <div className="eyebrow">VAMOS CRIAR?</div>
 
             <h2>
-              <h2>
-                Sua marca merece
-                <br />
-                <em>uma presença à altura.</em>
-              </h2>
+              Sua marca merece
+              <br />
+              <em>uma presença à altura.</em>
             </h2>
 
 
@@ -379,7 +377,7 @@ function App() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Quero criar meu site
+                Vamos conversar
                 <ArrowRight />
               </a>
 
@@ -407,6 +405,9 @@ function App() {
             </span>
           </a>
 
+          <p className="footer-tagline">
+            Presença digital com propósito.
+          </p>
         </div>
 
         <div className="footer-socials">
@@ -438,10 +439,13 @@ function App() {
 
 
         <div className="footer-center">
-
+          <span>TECNOLOGIA · DESIGN · ESTRATÉGIA</span>
         </div>
 
-
+        <div className="footer-bottom">
+          <span>© 2026 APD — AGÊNCIA DE PRESENÇA DIGITAL</span>
+          <span>FEITO PARA MARCAS QUE QUEREM SER LEMBRADAS.</span>
+        </div>
       </footer>
     </div>
   );
