@@ -4015,3 +4015,12 @@ button {
     font-size: 14px !important;
   }
 }
+
+/* Remove a divisão entre Serviços e Sobre a APD */
+.services::after {
+  display: none !important;
+}
+
+.services {
+  border-bottom: none !important;
+}

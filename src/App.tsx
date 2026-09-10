@@ -144,8 +144,8 @@ function App() {
             </h1>
 
             <p className="hero-description">
-              Criamos sites modernos, estratégicos e personalizados para transformar
-              negócios em experiências digitais.
+              Criamos experiências digitais
+              que representam sua marca.
             </p>
 
             <div className="hero-actions">
@@ -316,7 +316,7 @@ function App() {
               </div>
             </div>
 
-           
+
           </div>
 
           <div className="about-process">
@@ -332,7 +332,7 @@ function App() {
 
             <div className="process-steps">
               <div className="process-step">
-                
+
                 <span>01</span>
                 <strong>Entendemos</strong>
                 <p>Conhecemos sua marca, objetivo e público.</p>
@@ -359,7 +359,7 @@ function App() {
           </div>
         </section>
 
-      
+
         {/* ========================================
             CONTATO
         ======================================== */}
@@ -369,9 +369,11 @@ function App() {
             <div className="eyebrow">VAMOS CRIAR?</div>
 
             <h2>
-              Seu negócio já existe.
-              <br />
-              Agora ele precisa de uma presença que esteja à altura.
+              <h2>
+                Sua marca merece
+                <br />
+                <em>uma presença à altura.</em>
+              </h2>
             </h2>
 
 
@@ -439,7 +441,7 @@ function App() {
           </a>
         </div>
 
-        
+
         <div className="footer-center">
 
         </div>
