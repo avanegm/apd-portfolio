@@ -17,9 +17,9 @@ import {
 } from "lucide-react";
 
 const LINKS = {
-  instagram: "https://instagram.com/",
-  whatsapp: "https://wa.me/55SEUNUMERO",
-  email: "mailto:SEUEMAIL@EXEMPLO.COM",
+  instagram: "https://instagram.com/avanegm",
+  whatsapp: "https://wa.me/5535998259860",
+  email: "mailto:matheusavane312@gmail.com",
 };
 
 const projects = [
@@ -325,7 +325,7 @@ function App() {
 
             </div>
 
-
+            <div className="process-steps">
               <div className="process-step">
 
                 <span>01</span>
@@ -350,7 +350,7 @@ function App() {
                 <strong>Lançamos</strong>
                 <p>Publicamos e deixamos tudo pronto para crescer.</p>
               </div>
-
+            </div>
           </div>
         </section>
 
