@@ -32,6 +32,7 @@ const projects = [
     tone: "project-pink",
     label: "ISABELLA REIS",
     sublabel: "NAILS",
+    meta: "Design · Desenvolvimento",
   },
   {
     number: "02",
@@ -43,9 +44,9 @@ const projects = [
     tone: "project-blue",
     label: "JOÃO CARLOS",
     sublabel: "ADVOCACIA",
+    meta: "Design · Desenvolvimento",
   },
 ];
-
 
 const services = [
   {
@@ -56,7 +57,7 @@ const services = [
   {
     icon: PanelsTopLeft,
     title: "Landing pages",
-    text: "Páginas focadas em apresentação e conversão.",
+    text: "Páginas focadas em apresentação, posicionamento e conversão.",
   },
   {
     icon: Sparkles,
@@ -65,8 +66,31 @@ const services = [
   },
   {
     icon: RefreshCw,
-    title: "Evolução digital",
-    text: "Manutenção, melhoria e novas funcionalidades.",
+    title: "Manutenção & evolução",
+    text: "Melhorias, manutenção e novas funcionalidades para o site continuar evoluindo.",
+  },
+];
+
+const process = [
+  {
+    number: "01",
+    title: "Entendemos",
+    text: "Conhecemos sua marca, objetivo e público.",
+  },
+  {
+    number: "02",
+    title: "Criamos",
+    text: "Transformamos estratégia em uma experiência visual.",
+  },
+  {
+    number: "03",
+    title: "Desenvolvemos",
+    text: "Construímos um site rápido, responsivo e funcional.",
+  },
+  {
+    number: "04",
+    title: "Lançamos",
+    text: "Publicamos tudo pronto para sua marca crescer.",
   },
 ];
 
@@ -77,10 +101,6 @@ function App() {
 
   return (
     <div className="site">
-      {/* ========================================
-          HEADER
-      ======================================== */}
-
       <header className="header">
         <a href="#inicio" className="logo" onClick={close}>
           <span className="logo-main">APD</span>
@@ -92,23 +112,19 @@ function App() {
           </span>
         </a>
 
-        <nav className={menuOpen ? "nav nav-open" : "nav"}>
+        <nav className={menuOpen ? "nav nav-open" : "nav"} aria-label="Navegação principal">
           <a href="#projetos" onClick={close}>
             Projetos
           </a>
-
           <a href="#servicos" onClick={close}>
             Serviços
           </a>
-
           <a href="#sobre" onClick={close}>
             Sobre
           </a>
-
           <a href="#contato" onClick={close}>
             Contato
           </a>
-
           <a href="#contato" className="nav-contact" onClick={close}>
             Vamos conversar
             <ArrowUpRight />
@@ -117,7 +133,7 @@ function App() {
 
         <button
           className="menu-button"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen((value) => !value)}
           aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={menuOpen}
           type="button"
@@ -127,15 +143,11 @@ function App() {
       </header>
 
       <main>
-        {/* ========================================
-            HERO
-        ======================================== */}
-
         <section className="hero" id="inicio">
           <div className="hero-overlay" />
 
           <div className="hero-content">
-
+            <div className="eyebrow">AGÊNCIA DE PRESENÇA DIGITAL</div>
 
             <h1>
               Sua marca merece
@@ -144,8 +156,8 @@ function App() {
             </h1>
 
             <p className="hero-description">
-              Criamos experiências digitais
-              que representam sua marca.
+              Criamos sites e experiências digitais para marcas que querem se
+              apresentar melhor na internet.
             </p>
 
             <div className="hero-actions">
@@ -153,14 +165,17 @@ function App() {
                 Conheça nossos projetos
                 <ArrowRight />
               </a>
-
             </div>
           </div>
         </section>
 
-        {/* ========================================
-            PROJETOS
-        ======================================== */}
+        <div className="proof-strip" aria-label="Especialidades da APD">
+          <span>DESIGN</span>
+          <i />
+          <span>DESENVOLVIMENTO</span>
+          <i />
+          <span>ESTRATÉGIA</span>
+        </div>
 
         <section className="projects section" id="projetos">
           <div className="section-top">
@@ -173,35 +188,24 @@ function App() {
                 geram <em>presença.</em>
               </h2>
             </div>
-
           </div>
 
           <div className="project-list">
             {projects.map((project) => (
               <article className="project" key={project.number}>
-                <div
-                  className={`project-preview ${project.tone}`}
-                >
+                <div className={`project-preview ${project.tone}`}>
                   <div className="browser-bar">
                     <span />
                     <span />
                     <span />
-
                     <small>{project.category}</small>
                   </div>
 
                   <div className="preview-content">
-                    <span className="preview-kicker">
-                      {project.label}
-                    </span>
-
+                    <span className="preview-kicker">{project.label}</span>
                     <strong>{project.sublabel}</strong>
-
                     <div className="preview-line" />
-
-                    <span className="preview-mini">
-                      PRESENÇA DIGITAL
-                    </span>
+                    <span className="preview-mini">PRESENÇA DIGITAL</span>
                   </div>
 
                   <div className="preview-window">
@@ -210,7 +214,7 @@ function App() {
                     <div />
                   </div>
 
-                  {project.href && (
+                  {project.href ? (
                     <a
                       className="project-view"
                       href={project.href}
@@ -220,30 +224,39 @@ function App() {
                     >
                       <ExternalLink />
                     </a>
+                  ) : (
+                    <span className="project-view project-view-disabled" aria-label="Projeto em desenvolvimento">
+                      <ExternalLink />
+                    </span>
                   )}
                 </div>
 
                 <div className="project-info">
-                  <div className="project-number">
-                    {project.number}
-                  </div>
+                  <div className="project-number">{project.number}</div>
 
                   <div className="project-details">
-                    <span className="project-category">
-                      {project.category}
-                    </span>
+                    <span className="project-category">{project.category}</span>
 
                     <h3>{project.title}</h3>
 
                     <p>{project.description}</p>
 
+                    <span className="project-meta">{project.meta}</span>
+
                     {project.href ? (
-                      <a href={project.href} target="_blank" rel="noreferrer">
+                      <a
+                        href={project.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`Ver projeto ${project.title}`}
+                      >
                         Ver projeto
                         <ArrowRight />
                       </a>
                     ) : (
-                      <span className="project-soon">Em breve</span>
+                      <span className="project-coming-soon">
+                        Projeto em desenvolvimento
+                      </span>
                     )}
                   </div>
                 </div>
@@ -251,10 +264,6 @@ function App() {
             ))}
           </div>
         </section>
-
-        {/* ========================================
-            SERVIÇOS
-        ======================================== */}
 
         <section className="services section" id="servicos">
           <div className="services-heading">
@@ -275,7 +284,6 @@ function App() {
                 </div>
 
                 <h3>{title}</h3>
-
                 <p>{text}</p>
 
                 <ArrowUpRight className="service-arrow" />
@@ -283,10 +291,6 @@ function App() {
             ))}
           </div>
         </section>
-
-        {/* ========================================
-            SOBRE
-        ======================================== */}
 
         <section className="about section" id="sobre">
           <div className="about-main">
@@ -301,9 +305,9 @@ function App() {
 
               <div className="about-text">
                 <p>
-                  A APD nasceu da vontade de unir tecnologia, design e estratégia
-                  para ajudar negócios a construírem uma presença digital que
-                  realmente represente quem eles são.
+                  A APD nasceu da vontade de unir tecnologia, design e
+                  estratégia para ajudar negócios a construírem uma presença
+                  digital que realmente represente quem eles são.
                 </p>
 
                 <p>
@@ -313,49 +317,24 @@ function App() {
                 </p>
               </div>
             </div>
-
-
           </div>
 
           <div className="about-process">
             <div className="process-intro">
               <div className="eyebrow">NOSSO PROCESSO</div>
-
             </div>
 
             <div className="process-steps">
-              <div className="process-step">
-
-                <span>01</span>
-                <strong>Entendemos</strong>
-                <p>Conhecemos sua marca, objetivo e público.</p>
-              </div>
-
-              <div className="process-step">
-                <span>02</span>
-                <strong>Criamos</strong>
-                <p>Estruturamos design e experiência.</p>
-              </div>
-
-              <div className="process-step">
-                <span>03</span>
-                <strong>Desenvolvemos</strong>
-                <p>Transformamos a ideia em um site real.</p>
-              </div>
-
-              <div className="process-step">
-                <span>04</span>
-                <strong>Lançamos</strong>
-                <p>Publicamos e deixamos tudo pronto para crescer.</p>
-              </div>
+              {process.map((step) => (
+                <div className="process-step" key={step.number}>
+                  <span>{step.number}</span>
+                  <strong>{step.title}</strong>
+                  <p>{step.text}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
-
-
-        {/* ========================================
-            CONTATO
-        ======================================== */}
 
         <section className="contact section" id="contato">
           <div className="contact-inner">
@@ -366,7 +345,6 @@ function App() {
               <br />
               <em>uma presença à altura.</em>
             </h2>
-
 
             <div className="contact-actions">
               <a
@@ -379,17 +357,15 @@ function App() {
                 <ArrowRight />
               </a>
 
-
+              <span className="contact-note">
+                Conte um pouco sobre seu projeto e vamos conversar.
+              </span>
             </div>
           </div>
 
           <div className="contact-word">APD</div>
         </section>
       </main>
-
-      {/* ========================================
-          FOOTER
-      ======================================== */}
 
       <footer className="footer">
         <div className="footer-brand">
@@ -406,6 +382,10 @@ function App() {
           <p className="footer-tagline">
             Presença digital com propósito.
           </p>
+        </div>
+
+        <div className="footer-center">
+          <span>TECNOLOGIA · DESIGN · ESTRATÉGIA</span>
         </div>
 
         <div className="footer-socials">
@@ -427,19 +407,15 @@ function App() {
             <MessageCircle />
           </a>
 
-          <a
-            href={LINKS.email}
-            aria-label="E-mail"
-          >
+          <a href={LINKS.email} aria-label="E-mail">
             <Mail />
           </a>
         </div>
 
-
-        <div className="footer-center">
-          <span>TECNOLOGIA · DESIGN · ESTRATÉGIA</span>
+        <div className="footer-bottom">
+          <span>© 2026 APD — AGÊNCIA DE PRESENÇA DIGITAL</span>
+          <span>DESIGN · DESENVOLVIMENTO · ESTRATÉGIA</span>
         </div>
-
       </footer>
     </div>
   );
