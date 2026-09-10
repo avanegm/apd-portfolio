@@ -323,11 +323,6 @@ function App() {
             <div className="process-intro">
               <div className="eyebrow">NOSSO PROCESSO</div>
 
-              <h3>
-                Simples,
-                <br />
-                transparente e eficiente.
-              </h3>
             </div>
 
             <div className="process-steps">
