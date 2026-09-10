@@ -323,39 +323,7 @@ function App() {
               </div>
             </div>
 
-            <div className="about-pillars">
-              <div className="about-pillar">
-                <span className="pillar-icon">⌁</span>
-                <div>
-                  <strong>Tecnologia</strong>
-                  <small>que viabiliza</small>
-                </div>
-              </div>
-
-              <div className="about-pillar">
-                <span className="pillar-icon">◌</span>
-                <div>
-                  <strong>Design</strong>
-                  <small>que comunica</small>
-                </div>
-              </div>
-
-              <div className="about-pillar">
-                <span className="pillar-icon">✦</span>
-                <div>
-                  <strong>Estratégia</strong>
-                  <small>que gera resultados</small>
-                </div>
-              </div>
-
-              <div className="about-pillar">
-                <span className="pillar-icon">↗</span>
-                <div>
-                  <strong>+ projetos</strong>
-                  <small>desenvolvidos</small>
-                </div>
-              </div>
-            </div>
+           
           </div>
 
           <div className="about-process">
