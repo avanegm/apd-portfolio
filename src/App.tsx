@@ -147,7 +147,6 @@ function App() {
           <div className="hero-overlay" />
 
           <div className="hero-content">
-            <div className="eyebrow">AGÊNCIA DE PRESENÇA DIGITAL</div>
 
             <h1>
               Sua marca merece
