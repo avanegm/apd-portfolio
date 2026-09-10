@@ -442,10 +442,6 @@ function App() {
           <span>TECNOLOGIA · DESIGN · ESTRATÉGIA</span>
         </div>
 
-        <div className="footer-bottom">
-          <span>© 2026 APD — AGÊNCIA DE PRESENÇA DIGITAL</span>
-          <span>FEITO PARA MARCAS QUE QUEREM SER LEMBRADAS.</span>
-        </div>
       </footer>
     </div>
   );
